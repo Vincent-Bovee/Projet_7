@@ -1,0 +1,29 @@
+.ContainerPropos{
+    position: relative;
+    min-height: 100vh;
+    .BlocImgContainerPropos{
+        background-image: url(../assets/img/img2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 223px;
+        margin: 0 100px 33px 100px;
+        @media screen and (max-width: 767px) {
+            justify-content: flex-start;
+            margin: 0 20px 19px 20px;
+            height: 111px;
+        }
+    }
+    
+    .collapseContainerPropos{
+        margin: 0 208px;
+        position: relative;
+        @media screen and (max-width: 767px) {
+            margin: 0 20px;
+        }
+    }
+}

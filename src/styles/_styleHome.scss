@@ -1,0 +1,89 @@
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 25px 100px;
+    padding: 50px;
+    background: #F7F7F7;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    @media screen and (max-width: 767px) {
+        margin: 25px 20px;
+        padding: 20px;
+        gap: 20px;
+    }
+    div{
+        width: 340px;
+        height: 340px;
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            height: 255px;
+        }
+        .cardLink{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            border-radius: 10px;
+            text-decoration: none;
+            align-items: end;
+            position: relative;
+            
+            .cardImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .cardImgFilter{
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+                position: absolute;
+            }
+            .cardTitle{
+                margin: 20px;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 142.6%;
+                color: #FFFFFF;
+                position: absolute;
+            }
+        }
+    }
+
+}
+
+.BlocImgContainer{
+    background-image: url(../assets/img/img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 223px;
+    margin: 0 100px;
+    @media screen and (max-width: 767px) {
+        justify-content: flex-start;
+        margin: 0 20px;
+        height: 111px;
+    }
+    p{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 142.6%;
+        color: #FFFFFF;
+        padding: 0 16px;
+        @media screen and (max-width: 767px) {
+            font-size: 24px;
+            line-height: 100%;
+        }
+    }
+}
