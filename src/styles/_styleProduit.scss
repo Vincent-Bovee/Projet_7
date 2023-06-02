@@ -5,56 +5,7 @@
     @media screen and (max-width: 767px) {
         margin: 0 20px;
     }
-    .carousel-slider{
-        border-radius: 35px;
-        .img_produit{
-            width: 100%;
-            object-fit: cover;
-            height: 415px;
-            border-radius: 35px;
-            @media screen and (max-width: 767px) {
-                height: 255px;
-                border-radius: 10px;
-            }
-        }
-    }
-    .carousel-arrow{
-        position: absolute;
-        color: #000 !important;
-        font-size: 48px;
-        z-index: 999;
-        top: 50%;
-        border: none;
-        background-color: transparent;
-        img{
-            width: 48px;
-            @media screen and (max-width: 767px) {
-                width: 24px;
-
-            }
-        }
-    }
-    .carousel-arrow-prev{
-        transform: translate(0%, -50%) rotate(-90deg);
-    }
-    .carousel-arrow-next{
-        transform: translate(0%, -50%) rotate(90deg);
-        right: 0;
-    }
     
-    .thumbs-wrapper {
-        margin: 20px 0 !important;
-        .img_produit{
-            width: 100%;
-            object-fit: cover;
-            height: 50px;
-            @media screen and (max-width: 767px) {
-                height: 40px;
-            }
-        }
-    }
-
-
     .container_produit_info{
         display: flex;
         flex-direction: row;

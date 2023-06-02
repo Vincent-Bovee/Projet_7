@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -163,23 +164,37 @@ nav .navLinkContainer .navLink {
 }
 
 .cardContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  display: -ms-grid;
+  display: grid;
   margin: 25px 100px;
   padding: 50px;
   background: #F7F7F7;
   border-radius: 25px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   gap: 60px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+@media screen and (min-width: 1920px) {
+  .cardContainer {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1920px) {
+  .cardContainer {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1253px) {
+  .cardContainer {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  .cardContainer {
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+  }
 }
 @media screen and (max-width: 767px) {
   .cardContainer {
@@ -189,13 +204,17 @@ nav .navLinkContainer .navLink {
   }
 }
 .cardContainer div {
-  width: 340px;
-  height: 340px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 content;
+          flex: 1 0 content;
+  aspect-ratio: 1/1;
 }
 @media screen and (max-width: 767px) {
   .cardContainer div {
     width: 100%;
-    height: 255px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 255px;
+            flex: 1 0 255px;
   }
 }
 .cardContainer div .cardLink {
@@ -288,62 +307,6 @@ nav .navLinkContainer .navLink {
 @media screen and (max-width: 767px) {
   .container_produit {
     margin: 0 20px;
-  }
-}
-.container_produit .carousel-slider {
-  border-radius: 35px;
-}
-.container_produit .carousel-slider .img_produit {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 415px;
-  border-radius: 35px;
-}
-@media screen and (max-width: 767px) {
-  .container_produit .carousel-slider .img_produit {
-    height: 255px;
-    border-radius: 10px;
-  }
-}
-.container_produit .carousel-arrow {
-  position: absolute;
-  color: #000 !important;
-  font-size: 48px;
-  z-index: 999;
-  top: 50%;
-  border: none;
-  background-color: transparent;
-}
-.container_produit .carousel-arrow img {
-  width: 48px;
-}
-@media screen and (max-width: 767px) {
-  .container_produit .carousel-arrow img {
-    width: 24px;
-  }
-}
-.container_produit .carousel-arrow-prev {
-  -webkit-transform: translate(0%, -50%) rotate(-90deg);
-          transform: translate(0%, -50%) rotate(-90deg);
-}
-.container_produit .carousel-arrow-next {
-  -webkit-transform: translate(0%, -50%) rotate(90deg);
-          transform: translate(0%, -50%) rotate(90deg);
-  right: 0;
-}
-.container_produit .thumbs-wrapper {
-  margin: 20px 0 !important;
-}
-.container_produit .thumbs-wrapper .img_produit {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 50px;
-}
-@media screen and (max-width: 767px) {
-  .container_produit .thumbs-wrapper .img_produit {
-    height: 40px;
   }
 }
 .container_produit .container_produit_info {
@@ -682,6 +645,93 @@ footer p {
   footer p {
     font-size: 12px;
   }
+}
+
+.carousel {
+  margin-bottom: 40px;
+  border-radius: 25px;
+  position: relative;
+  height: 415px;
+}
+@media screen and (max-width: 767px) {
+  .carousel {
+    height: 255px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+}
+
+.carousel-item {
+  position: absolute;
+  z-index: 0;
+  height: 100%; /* Modifier la hauteur à 100% */
+  width: 100%; /* Ajouter la largeur à 100% */
+}
+@media screen and (max-width: 767px) {
+  .carousel-item {
+    height: 255px;
+  }
+}
+
+.carousel-item.active {
+  z-index: 999;
+}
+
+.img_produit {
+  border-radius: 25px;
+  width: 100%;
+  height: 100%; /* Ajouter la hauteur à 100% */
+  -o-object-fit: cover;
+     object-fit: cover; /* Utiliser la valeur "contain" */
+}
+@media screen and (max-width: 767px) {
+  .img_produit {
+    border-radius: 10px;
+  }
+}
+
+.carousel-arrow {
+  position: absolute;
+  color: #000 !important;
+  font-size: 48px;
+  z-index: 999;
+  top: 50%;
+  border: none;
+  background-color: transparent;
+}
+.carousel-arrow img {
+  width: 48px;
+}
+@media screen and (max-width: 767px) {
+  .carousel-arrow img {
+    width: 24px;
+  }
+}
+
+.carousel-arrow-prev {
+  -webkit-transform: translate(0%, -50%) rotate(-90deg);
+          transform: translate(0%, -50%) rotate(-90deg);
+}
+
+.carousel-arrow-next {
+  -webkit-transform: translate(0%, -50%) rotate(90deg);
+          transform: translate(0%, -50%) rotate(90deg);
+  right: 0;
+}
+
+.bullet {
+  position: absolute;
+  top: 86.19%;
+  left: 50%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 142.6%;
+  color: #FFF;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  text-shadow: 1px 1px 1px #000;
 }
 
 .mobile {

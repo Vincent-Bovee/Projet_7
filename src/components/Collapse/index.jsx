@@ -7,20 +7,30 @@ function Collapse({ title, text }) {
     const handleCollapse = () => {
       setIsCollapsed(!isCollapsed);
     };
+  
+    let formattedText;
 
+    if (Array.isArray(text)) {
+        formattedText = text.join('<br />');
+    } 
+    else {
+        formattedText = text;
+    }
 
     return (
-        <div className='collapse'>
-            <div className='collapse_title' onClick={handleCollapse}>
+        <div className="collapse">
+            <div className="collapse_title" onClick={handleCollapse}>
                 <h2>{title}</h2>
                 <img src={arrow} alt="arrow" />
             </div>
             {!isCollapsed && (
-            <div className='collapse_text'>
-                <p>{text}</p>
-            </div>
+                <div className="collapse_text">
+                    <p dangerouslySetInnerHTML={{ __html: formattedText }}></p>
+                </div>
             )}
         </div>
     );
-}
-export default Collapse;
+  }
+  
+  export default Collapse;
+  

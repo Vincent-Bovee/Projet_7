@@ -17,16 +17,16 @@ const textSecurite = "La sécurité est la priorité de Kasa. Aussi bien pour no
 
 function Propos() {
     return (
-        <div className='ContainerPropos'>
-            <div className='BlocImgContainerPropos'></div>
-            <div className="collapseContainerPropos">
+        <main className='ContainerPropos'>
+            <figure className='BlocImgContainerPropos'></figure>
+            <section className="collapseContainerPropos">
                 <Collapse title={titleFiabilite} text={textFiabilite} />
                 <Collapse title={titleRespect} text={textRespect} />
                 <Collapse title={titleService} text={textService} />
                 <Collapse title={titleSecurite} text={textSecurite} />
-            </div>
+            </section>
 
-        </div>
+        </main>
 
     )
 }
