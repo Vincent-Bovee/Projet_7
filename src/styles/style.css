@@ -204,17 +204,11 @@ nav .navLinkContainer .navLink {
   }
 }
 .cardContainer div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 content;
-          flex: 1 0 content;
   aspect-ratio: 1/1;
 }
 @media screen and (max-width: 767px) {
   .cardContainer div {
     width: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 255px;
-            flex: 1 0 255px;
   }
 }
 .cardContainer div .cardLink {

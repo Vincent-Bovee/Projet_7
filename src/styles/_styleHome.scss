@@ -23,11 +23,9 @@
         gap: 20px;
     }
     div{
-        flex: 1 0 content;
         aspect-ratio: 1 / 1;
         @media screen and (max-width: 767px) {
             width: 100%;
-            flex: 1 0 255px;
         }
         .cardLink{
             width: 100%;
